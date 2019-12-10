@@ -21,6 +21,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Mm-U1-VoD">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableFooterView" contentMode="redraw" text="" id="wz8-bV-95H">
+                                    <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="48g-2f-qvR" detailTextLabel="GlL-CF-DsX" style="IBUITableViewCellStyleSubtitle" id="UDp-XK-Ed8">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
@@ -67,6 +72,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="4Mm-U1-VoD" id="avk-IE-qr1"/>
+                        <outlet property="taskText" destination="wz8-bV-95H" id="gZe-8G-msm"/>
                         <segue destination="VL4-be-g86" kind="show" identifier="cellSegue" id="1bd-0n-ZQj"/>
                     </connections>
                 </viewController>
@@ -119,20 +125,38 @@
                                     <!--2019-12-03 09:33:30 +0000-->
                                 </date>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyA-wI-VpE">
+                                <rect key="frame" x="10" y="436" width="300" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7y0-sq-pcm">
+                                <rect key="frame" x="10" y="467" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7y0-sq-pcm" firstAttribute="top" secondItem="uyA-wI-VpE" secondAttribute="bottom" constant="10" id="0ke-u1-hvU"/>
+                            <constraint firstItem="uyA-wI-VpE" firstAttribute="leading" secondItem="5TA-bj-e4O" secondAttribute="leading" constant="10" id="5Uq-72-mQr"/>
                             <constraint firstItem="5TA-bj-e4O" firstAttribute="trailing" secondItem="MTj-hy-FNH" secondAttribute="trailing" constant="10" id="68r-4d-nFx"/>
+                            <constraint firstItem="5TA-bj-e4O" firstAttribute="trailing" secondItem="uyA-wI-VpE" secondAttribute="trailing" constant="10" id="Caj-di-jVM"/>
                             <constraint firstItem="5TA-bj-e4O" firstAttribute="trailing" secondItem="fs8-oK-6cX" secondAttribute="trailing" constant="10" id="Hk2-Ao-StJ"/>
                             <constraint firstItem="MTj-hy-FNH" firstAttribute="leading" secondItem="5TA-bj-e4O" secondAttribute="leading" constant="10" id="Hr4-mL-WZc"/>
+                            <constraint firstItem="5TA-bj-e4O" firstAttribute="trailing" secondItem="7y0-sq-pcm" secondAttribute="trailing" constant="10" id="LsC-tm-9Ts"/>
                             <constraint firstItem="5TA-bj-e4O" firstAttribute="trailing" secondItem="VbM-Bm-Kyw" secondAttribute="trailing" constant="10" id="UEZ-Ge-I6g"/>
                             <constraint firstItem="1vk-eK-VJ5" firstAttribute="top" secondItem="VbM-Bm-Kyw" secondAttribute="bottom" constant="10" id="W4e-Us-EyK"/>
                             <constraint firstItem="I2E-tl-FMA" firstAttribute="top" secondItem="5TA-bj-e4O" secondAttribute="top" constant="10" id="dhY-n2-cr5"/>
                             <constraint firstItem="fs8-oK-6cX" firstAttribute="leading" secondItem="5TA-bj-e4O" secondAttribute="leading" constant="10" id="ess-Aa-Bet"/>
+                            <constraint firstItem="uyA-wI-VpE" firstAttribute="top" secondItem="1vk-eK-VJ5" secondAttribute="bottom" constant="10" id="ffy-mW-RkB"/>
                             <constraint firstItem="1vk-eK-VJ5" firstAttribute="leading" secondItem="5TA-bj-e4O" secondAttribute="leading" id="ftx-e6-Ymv"/>
                             <constraint firstItem="VbM-Bm-Kyw" firstAttribute="leading" secondItem="5TA-bj-e4O" secondAttribute="leading" constant="10" id="l9O-RR-LyV"/>
                             <constraint firstItem="fs8-oK-6cX" firstAttribute="top" secondItem="MTj-hy-FNH" secondAttribute="bottom" constant="10" id="nLM-6g-V6a"/>
                             <constraint firstItem="5TA-bj-e4O" firstAttribute="trailing" secondItem="I2E-tl-FMA" secondAttribute="trailing" constant="10" id="pRi-KP-Umx"/>
+                            <constraint firstItem="7y0-sq-pcm" firstAttribute="leading" secondItem="5TA-bj-e4O" secondAttribute="leading" constant="10" id="prA-p7-Cye"/>
                             <constraint firstItem="MTj-hy-FNH" firstAttribute="top" secondItem="I2E-tl-FMA" secondAttribute="bottom" constant="10" id="pyV-iV-1gd"/>
                             <constraint firstItem="I2E-tl-FMA" firstAttribute="leading" secondItem="5TA-bj-e4O" secondAttribute="leading" constant="10" id="tEd-aY-lMU"/>
                             <constraint firstItem="VbM-Bm-Kyw" firstAttribute="top" secondItem="fs8-oK-6cX" secondAttribute="bottom" constant="10" id="tJS-mN-UQs"/>
@@ -141,6 +165,7 @@
                         <viewLayoutGuide key="safeArea" id="5TA-bj-e4O"/>
                     </view>
                     <connections>
+                        <outlet property="categoryField" destination="7y0-sq-pcm" id="f5S-3l-JoB"/>
                         <outlet property="contentsTextView" destination="VbM-Bm-Kyw" id="wRo-hN-909"/>
                         <outlet property="datePicker" destination="1vk-eK-VJ5" id="Ggp-se-DYC"/>
                         <outlet property="titleTextField" destination="MTj-hy-FNH" id="m8h-d9-we3"/>
@@ -148,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOl-U0-qGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1888.125" y="353.87323943661971"/>
+            <point key="canvasLocation" x="1856" y="33"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fT1-rv-ijg">
@@ -166,7 +191,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xrZ-cV-j9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.875" y="701.4084507042254"/>
+            <point key="canvasLocation" x="300" y="33"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
